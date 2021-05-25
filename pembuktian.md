@@ -289,7 +289,7 @@ Langkah terakhir adalah dengan menghitung nilai hash dari hasil penggabungan ked
 
 Hasil HMAC-SHA1 = `6d24541c463591d0977685c7c042145e0f490258`
 
-## RSA
+## RSA (Pembangkitan Kunci dan Enkripsi)
 
 ### Pembangkitan Kunci
 Misalnya diambil
@@ -561,3 +561,150 @@ Hasil akhir adalah penggabungan nilai enkripsi dengan nilai HMAC:
 ```
 055f0366014f02380150055f0366055f01500238055f055f055f03660238014f055f023801500238055f055f055f03660366036602380150014f0366055f014f03660238055f0150015001500150055f02380366014f0366014f0366055f023806020366055f014f0602014f03660150055f02380150055f0238055f014f03660238014f0150055f023801500238055f0366014f036603660366014f0150055f0238055f014f03660150014f014f01500366055f0238055f0366014f0238055f014f02380238014f1bfe5b0bc0b391bf8cae729de7ea73c8e6517bf3
 ```
+
+# Pembuktian Dekripsi dan Verifikasi
+
+Pesan yaitu:
+
+```
+055f0366014f02380150055f0366055f01500238055f055f055f03660238014f055f023801500238055f055f055f03660366036602380150014f0366055f014f03660238055f0150015001500150055f02380366014f0366014f0366055f023806020366055f014f0602014f03660150055f02380150055f0238055f014f03660238014f0150055f023801500238055f0366014f036603660366014f0150055f0238055f014f03660150014f014f01500366055f0238055f0366014f0238055f014f02380238014f1bfe5b0bc0b391bf8cae729de7ea73c8e6517bf3
+```
+
+dibagi menjadi 2 bagian, yaitu pesan terenkripsi dan nilai hash, nilai hash diambil dari 40 byte akhir pesan dengan asumsi bahwa panjang hasil HMAC-SHA1 adalah 40 byte yang disimpan di bagian akhir.
+
+Hasilnya:
+
+1. Pesan terenkripsi
+    ```
+    055f0366014f02380150055f0366055f01500238055f055f055f03660238014f055f023801500238055f055f055f03660366036602380150014f0366055f014f03660238055f0150015001500150055f02380366014f0366014f0366055f023806020366055f014f0602014f03660150055f02380150055f0238055f014f03660238014f0150055f023801500238055f0366014f036603660366014f0150055f0238055f014f03660150014f014f01500366055f0238055f0366014f0238055f014f02380238014f
+    ```
+
+2. Nilai HMAC-SHA1 (tanda tangan)
+    ```
+    1bfe5b0bc0b391bf8cae729de7ea73c8e6517bf3
+    ```
+
+## Dekripsi
+
+Dengan menggunakan kunci privat, yaitu `d = (1307, 2077)`, dilakukan operasi dekripsi pada pesan.
+
+Langkah pertama adalah mengubah array pesan dari hex menjadi desimal.
+
+```
+055f = 1375 didekripsi = 65 = A
+0366 = 870 didekripsi = 66 = B
+014f = 335 didekripsi = 67 = C
+0238 = 568 didekripsi = 69 = E
+0150 = 336 didekripsi = 68 = D
+055f = 1375 didekripsi = 65 = A
+0366 = 870 didekripsi = 66 = B
+055f = 1375 didekripsi = 65 = A
+0150 = 336 didekripsi = 68 = D
+0238 = 568 didekripsi = 69 = E
+055f = 1375 didekripsi = 65 = A
+055f = 1375 didekripsi = 65 = A
+055f = 1375 didekripsi = 65 = A
+0366 = 870 didekripsi = 66 = B
+0238 = 568 didekripsi = 69 = E
+014f = 335 didekripsi = 67 = C
+055f = 1375 didekripsi = 65 = A
+0238 = 568 didekripsi = 69 = E
+0150 = 336 didekripsi = 68 = D
+0238 = 568 didekripsi = 69 = E
+055f = 1375 didekripsi = 65 = A
+055f = 1375 didekripsi = 65 = A
+055f = 1375 didekripsi = 65 = A
+0366 = 870 didekripsi = 66 = B
+0366 = 870 didekripsi = 66 = B
+0366 = 870 didekripsi = 66 = B
+0238 = 568 didekripsi = 69 = E
+0150 = 336 didekripsi = 68 = D
+014f = 335 didekripsi = 67 = C
+0366 = 870 didekripsi = 66 = B
+055f = 1375 didekripsi = 65 = A
+014f = 335 didekripsi = 67 = C
+0366 = 870 didekripsi = 66 = B
+0238 = 568 didekripsi = 69 = E
+055f = 1375 didekripsi = 65 = A
+0150 = 336 didekripsi = 68 = D
+0150 = 336 didekripsi = 68 = D
+0150 = 336 didekripsi = 68 = D
+0150 = 336 didekripsi = 68 = D
+055f = 1375 didekripsi = 65 = A
+0238 = 568 didekripsi = 69 = E
+0366 = 870 didekripsi = 66 = B
+014f = 335 didekripsi = 67 = C
+0366 = 870 didekripsi = 66 = B
+014f = 335 didekripsi = 67 = C
+0366 = 870 didekripsi = 66 = B
+055f = 1375 didekripsi = 65 = A
+0238 = 568 didekripsi = 69 = E
+0602 = 1538 didekripsi = 82 = R
+0366 = 870 didekripsi = 66 = B
+055f = 1375 didekripsi = 65 = A
+014f = 335 didekripsi = 67 = C
+0602 = 1538 didekripsi = 82 = R
+014f = 335 didekripsi = 67 = C
+0366 = 870 didekripsi = 66 = B
+0150 = 336 didekripsi = 68 = D
+055f = 1375 didekripsi = 65 = A
+0238 = 568 didekripsi = 69 = E
+0150 = 336 didekripsi = 68 = D
+055f = 1375 didekripsi = 65 = A
+0238 = 568 didekripsi = 69 = E
+055f = 1375 didekripsi = 65 = A
+014f = 335 didekripsi = 67 = C
+0366 = 870 didekripsi = 66 = B
+0238 = 568 didekripsi = 69 = E
+014f = 335 didekripsi = 67 = C
+0150 = 336 didekripsi = 68 = D
+055f = 1375 didekripsi = 65 = A
+0238 = 568 didekripsi = 69 = E
+0150 = 336 didekripsi = 68 = D
+0238 = 568 didekripsi = 69 = E
+055f = 1375 didekripsi = 65 = A
+0366 = 870 didekripsi = 66 = B
+014f = 335 didekripsi = 67 = C
+0366 = 870 didekripsi = 66 = B
+0366 = 870 didekripsi = 66 = B
+0366 = 870 didekripsi = 66 = B
+014f = 335 didekripsi = 67 = C
+0150 = 336 didekripsi = 68 = D
+055f = 1375 didekripsi = 65 = A
+0238 = 568 didekripsi = 69 = E
+055f = 1375 didekripsi = 65 = A
+014f = 335 didekripsi = 67 = C
+0366 = 870 didekripsi = 66 = B
+0150 = 336 didekripsi = 68 = D
+014f = 335 didekripsi = 67 = C
+014f = 335 didekripsi = 67 = C
+0150 = 336 didekripsi = 68 = D
+0366 = 870 didekripsi = 66 = B
+055f = 1375 didekripsi = 65 = A
+0238 = 568 didekripsi = 69 = E
+055f = 1375 didekripsi = 65 = A
+0366 = 870 didekripsi = 66 = B
+014f = 335 didekripsi = 67 = C
+0238 = 568 didekripsi = 69 = E
+055f = 1375 didekripsi = 65 = A
+014f = 335 didekripsi = 67 = C
+0238 = 568 didekripsi = 69 = E
+0238 = 568 didekripsi = 69 = E
+014f = 335 didekripsi = 67 = C
+```
+
+atau:
+
+```
+ABCEDABADEAAABECAEDEAAABBBEDCBACBEADDDDAEBCBCBAERBACRCBDAEDAEACBECDAEDEABCBBBCDAEACBDCCDBAEABCEACEEC
+```
+
+Kemudian untuk memverifikasi, dilakukan proses yang sama dengan proses HMAC dengan menggunakan kunci yang sama.
+
+Hasilnya adalah:
+
+```
+1bfe5b0bc0b391bf8cae729de7ea73c8e6517bf3
+```
+
+Nilai ini kemudian dibandingkan dengan nilai HMAC-SHA1 yang didapatkan dari pesan, dan didapati nilainya sama. Hal ini mengindikasikan pesan terverifikasi.
