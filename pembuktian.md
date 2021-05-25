@@ -147,6 +147,11 @@ Indeks ke 62 = z atau 122 dalam ASCII xor 54 = 76
 Indeks ke 63 = . atau 46 dalam ASCII xor 54 = 24
 ```
 
+Ketika digabungkan menjadi suatu array:
+```
+10 8 92 75 24 4 97 26 75 90 65 14 122 71 116 12 1 96 104 124 67 11 124 72 82 69 5 11 24 18 118 83 125 93 13 72 113 4 82 67 6 12 90 71 16 14 7 10 27 0 14 105 6 90 21 0 15 6 1 117 5 96 76 24
+```
+
 ## RSA
 
 ### Pembangkitan Kunci
