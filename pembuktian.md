@@ -229,10 +229,56 @@ Kemudian dilakukan perhitungan hash terhadap penggabungan ini, menghasilkan:
 b2d45029d89dd4c587a84a55899c209afd046ff7
 ```
 
-Langkah selanjutnya adalah penggabungan hasil hash pertama diatas dengan hasil dari xor antar OPAD dan kunci:
+Langkah selanjutnya adalah penggabungan hasil hash pertama diatas dengan hasil dari xor antar OPAD dan kunci, namun sebelumnya, dilakukan perubahan nilai pada hash yang semula adalah bentuk hex diubah menjadi desimal untuk menyeragamkan dengan nilai hasil xor OPAD dengan kunci. Dengan menggunakan tabel ASCII, dikonversi menjadi:
 
 ```
-b2d45029d89dd4c587a84a55899c209afd046ff7969854331141101111233484310016453010210710222419722345647111971141202857235510334271105641108102484512210010996113106100310848127106101108107311111038114
+b = 98
+2 = 50
+d = 100
+4 = 52
+5 = 53
+0 = 48
+2 = 50
+9 = 57
+d = 100
+8 = 56
+9 = 57
+d = 100
+d = 100
+4 = 52
+c = 99
+5 = 53
+8 = 56
+7 = 55
+a = 97
+8 = 56
+4 = 52
+a = 97
+5 = 53
+5 = 53
+8 = 56
+9 = 57
+9 = 57
+c = 99
+2 = 50
+0 = 48
+9 = 57
+a = 97
+f = 102
+d = 100
+0 = 48
+4 = 52
+6 = 54
+f = 102
+f = 102
+7 = 55
+```
+
+Lalu kemudian digabungkan menjadi:
+
+
+```
+9850100525348505710056571001005299535655975652975353565757995048579710210048525410210255969854331141101111233484310016453010210710222419722345647111971141202857235510334271105641108102484512210010996113106100310848127106101108107311111038114
 ```
 
 Langkah terakhir adalah dengan menghitung nilai hash dari hasil penggabungan kedua diatas:
@@ -404,3 +450,4 @@ arr[97] = 69 = 568
 arr[98] = 69 = 568
 arr[99] = 67 = 335
 ```
+
