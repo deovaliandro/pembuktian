@@ -590,6 +590,13 @@ Dengan menggunakan kunci privat, yaitu `d = (1307, 2077)`, dilakukan operasi dek
 
 Langkah pertama adalah mengubah array pesan dari hex menjadi desimal.
 
+Langkah selanjutnya adalah melakukan operasi dekripsi dengan menggunakan persamaan:
+
+```
+m = c^d mod n
+```
+Diuraikan sebagai berikut:
+
 ```
 055f = 1375 didekripsi = 65 = A
 0366 = 870 didekripsi = 66 = B
