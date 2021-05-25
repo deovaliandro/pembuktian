@@ -18,12 +18,21 @@ Ini digunakan untuk menghitung RSA.
 
 ## HMAC
 
+Didefinisikan terdapat dua parameter, yaitu:
+
+```
+IPAD = 0x36
+OPAD = 0x5c
+```
+
+masing-masing memiliki panjang 64 byte (nilainya di ulang-ulang).
+
 ### Pembangkitan Kunci
 Ada tiga kemungkinan:
 
 1. Panjang kunci sudah sesuai dengan panjang input untuk SHA1 (64 bit), sehingga tidak perlu dilakukan normalisasi kunci. Misalnya:
     ```
-    `)DUpP{I@}sILmugg#X_G<*DFnF&J1J,D_4mdh>(p63F0v=<_~11eMpOfq)gXHClF`
+    <>j}.2W,}lw8LqB:7V^Ju=J~ds3=.$@eKk;~G2du0:lq&81<-68_0l#6907C3Vz.
     ```
 2. Panjang kunci kurang dari 64 bit, misalnya:
 
@@ -42,6 +51,101 @@ Ada tiga kemungkinan:
     1835680838382434351145939143193828632331920341628866896842923618141316070322011739557891761769367175
     ```
     Untuk normalisasi, dilakukan perhitungan SHA1 pada kunci tersebut, sehingga menghasilkan 40 byte (hasil dari operasi SHA1).
+
+    Operasi SHA1 pada kunci diatas menghasilkan
+    ```
+    b18e4143150a6c859f324cb66692ecd6ffdc0ce1
+    ```
+
+    Kemudian, ditambahkan padding `0` sehingga panjangnya menjadi 64:
+
+    ```
+    b18e4143150a6c859f324cb66692ecd6ffdc0ce100000000000000000000
+    ```
+
+Dalam pembuktian ini, kita menggunakan kunci yang ada pada nomor 1 dengan anggapan jika kunci memiliki panjang 64 byte.
+
+### Key xor IPAD
+
+Key =
+
+```
+<>j}.2W,}lw8LqB:7V^Ju=J~ds3=.$@eKk;~G2du0:lq&81<-68_0l#6907C3Vz.
+```
+
+Key (dalam hex)=
+```
+3C3E6A7D2E32572C7D6C77384C71423A37565E4A753D4A7E6473333D2E2440654B6B3B7E47326475303A6C712638313C2D36385F306C23363930374333567A2E
+```
+
+Diuraikan sebagai berikut:
+
+```
+Indeks ke 0 = < atau 60 dalam ASCII xor 54 = 10
+Indeks ke 1 = > atau 62 dalam ASCII xor 54 = 8
+Indeks ke 2 = j atau 106 dalam ASCII xor 54 = 92
+Indeks ke 3 = } atau 125 dalam ASCII xor 54 = 75
+Indeks ke 4 = . atau 46 dalam ASCII xor 54 = 24
+Indeks ke 5 = 2 atau 50 dalam ASCII xor 54 = 4
+Indeks ke 6 = W atau 87 dalam ASCII xor 54 = 97
+Indeks ke 7 = , atau 44 dalam ASCII xor 54 = 26
+Indeks ke 8 = } atau 125 dalam ASCII xor 54 = 75
+Indeks ke 9 = l atau 108 dalam ASCII xor 54 = 90
+Indeks ke 10 = w atau 119 dalam ASCII xor 54 = 65
+Indeks ke 11 = 8 atau 56 dalam ASCII xor 54 = 14
+Indeks ke 12 = L atau 76 dalam ASCII xor 54 = 122
+Indeks ke 13 = q atau 113 dalam ASCII xor 54 = 71
+Indeks ke 14 = B atau 66 dalam ASCII xor 54 = 116
+Indeks ke 15 = : atau 58 dalam ASCII xor 54 = 12
+Indeks ke 16 = 7 atau 55 dalam ASCII xor 54 = 1
+Indeks ke 17 = V atau 86 dalam ASCII xor 54 = 96
+Indeks ke 18 = ^ atau 94 dalam ASCII xor 54 = 104
+Indeks ke 19 = J atau 74 dalam ASCII xor 54 = 124
+Indeks ke 20 = u atau 117 dalam ASCII xor 54 = 67
+Indeks ke 21 = = atau 61 dalam ASCII xor 54 = 11
+Indeks ke 22 = J atau 74 dalam ASCII xor 54 = 124
+Indeks ke 23 = ~ atau 126 dalam ASCII xor 54 = 72
+Indeks ke 24 = d atau 100 dalam ASCII xor 54 = 82
+Indeks ke 25 = s atau 115 dalam ASCII xor 54 = 69
+Indeks ke 26 = 3 atau 51 dalam ASCII xor 54 = 5
+Indeks ke 27 = = atau 61 dalam ASCII xor 54 = 11
+Indeks ke 28 = . atau 46 dalam ASCII xor 54 = 24
+Indeks ke 29 = $ atau 36 dalam ASCII xor 54 = 18
+Indeks ke 30 = @ atau 64 dalam ASCII xor 54 = 118
+Indeks ke 31 = e atau 101 dalam ASCII xor 54 = 83
+Indeks ke 32 = K atau 75 dalam ASCII xor 54 = 125
+Indeks ke 33 = k atau 107 dalam ASCII xor 54 = 93
+Indeks ke 34 = ; atau 59 dalam ASCII xor 54 = 13
+Indeks ke 35 = ~ atau 126 dalam ASCII xor 54 = 72
+Indeks ke 36 = G atau 71 dalam ASCII xor 54 = 113
+Indeks ke 37 = 2 atau 50 dalam ASCII xor 54 = 4
+Indeks ke 38 = d atau 100 dalam ASCII xor 54 = 82
+Indeks ke 39 = u atau 117 dalam ASCII xor 54 = 67
+Indeks ke 40 = 0 atau 48 dalam ASCII xor 54 = 6
+Indeks ke 41 = : atau 58 dalam ASCII xor 54 = 12
+Indeks ke 42 = l atau 108 dalam ASCII xor 54 = 90
+Indeks ke 43 = q atau 113 dalam ASCII xor 54 = 71
+Indeks ke 44 = & atau 38 dalam ASCII xor 54 = 16
+Indeks ke 45 = 8 atau 56 dalam ASCII xor 54 = 14
+Indeks ke 46 = 1 atau 49 dalam ASCII xor 54 = 7
+Indeks ke 47 = < atau 60 dalam ASCII xor 54 = 10
+Indeks ke 48 = - atau 45 dalam ASCII xor 54 = 27
+Indeks ke 49 = 6 atau 54 dalam ASCII xor 54 = 0
+Indeks ke 50 = 8 atau 56 dalam ASCII xor 54 = 14
+Indeks ke 51 = _ atau 95 dalam ASCII xor 54 = 105
+Indeks ke 52 = 0 atau 48 dalam ASCII xor 54 = 6
+Indeks ke 53 = l atau 108 dalam ASCII xor 54 = 90
+Indeks ke 54 = # atau 35 dalam ASCII xor 54 = 21
+Indeks ke 55 = 6 atau 54 dalam ASCII xor 54 = 0
+Indeks ke 56 = 9 atau 57 dalam ASCII xor 54 = 15
+Indeks ke 57 = 0 atau 48 dalam ASCII xor 54 = 6
+Indeks ke 58 = 7 atau 55 dalam ASCII xor 54 = 1
+Indeks ke 59 = C atau 67 dalam ASCII xor 54 = 117
+Indeks ke 60 = 3 atau 51 dalam ASCII xor 54 = 5
+Indeks ke 61 = V atau 86 dalam ASCII xor 54 = 96
+Indeks ke 62 = z atau 122 dalam ASCII xor 54 = 76
+Indeks ke 63 = . atau 46 dalam ASCII xor 54 = 24
+```
 
 ## RSA
 
