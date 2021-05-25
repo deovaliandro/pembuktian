@@ -1,3 +1,7 @@
+Pembuktian.
+
+Link = https://github.com/deovaliandro/pembuktian/blob/main/pembuktian.md
+
 ## Pesan
 
 Misalnya pesan adalah:
@@ -73,11 +77,6 @@ Key =
 
 ```
 <>j}.2W,}lw8LqB:7V^Ju=J~ds3=.$@eKk;~G2du0:lq&81<-68_0l#6907C3Vz.
-```
-
-Key (dalam hex)=
-```
-3C3E6A7D2E32572C7D6C77384C71423A37565E4A753D4A7E6473333D2E2440654B6B3B7E47326475303A6C712638313C2D36385F306C23363930374333567A2E
 ```
 
 Diuraikan sebagai berikut:
@@ -235,6 +234,14 @@ Langkah selanjutnya adalah penggabungan hasil hash pertama diatas dengan hasil d
 ```
 b2d45029d89dd4c587a84a55899c209afd046ff7969854331141101111233484310016453010210710222419722345647111971141202857235510334271105641108102484512210010996113106100310848127106101108107311111038114
 ```
+
+Langkah terakhir adalah dengan menghitung nilai hash dari hasil penggabungan kedua diatas:
+
+```
+6d24541c463591d0977685c7c042145e0f490258
+```
+
+Hasil HMAC-SHA1 = `6d24541c463591d0977685c7c042145e0f490258`
 
 ## RSA
 
