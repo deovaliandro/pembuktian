@@ -152,70 +152,70 @@ Indeks ke 63 = . atau 46 dalam ASCII xor 54 = 24
 Kemudian dilakukan juga xor antara OPAD dengan kunci:
 
 ```
-Indeks ke 0 = < atau 60 dalam ASCII xor 92 = 10
-Indeks ke 1 = > atau 62 dalam ASCII xor 92 = 8
-Indeks ke 2 = j atau 106 dalam ASCII xor 92 = 92
-Indeks ke 3 = } atau 125 dalam ASCII xor 92 = 75
-Indeks ke 4 = . atau 46 dalam ASCII xor 92 = 24
-Indeks ke 5 = 2 atau 50 dalam ASCII xor 92 = 4
-Indeks ke 6 = W atau 87 dalam ASCII xor 92 = 97
-Indeks ke 7 = , atau 44 dalam ASCII xor 92 = 26
-Indeks ke 8 = } atau 125 dalam ASCII xor 92 = 75
-Indeks ke 9 = l atau 108 dalam ASCII xor 92 = 90
-Indeks ke 10 = w atau 119 dalam ASCII xor 92 = 65
-Indeks ke 11 = 8 atau 56 dalam ASCII xor 92 = 14
-Indeks ke 12 = L atau 76 dalam ASCII xor 92 = 122
-Indeks ke 13 = q atau 113 dalam ASCII xor 92 = 71
-Indeks ke 14 = B atau 66 dalam ASCII xor 92 = 116
-Indeks ke 15 = : atau 58 dalam ASCII xor 92 = 12
-Indeks ke 16 = 7 atau 55 dalam ASCII xor 92 = 1
-Indeks ke 17 = V atau 86 dalam ASCII xor 92 = 96
-Indeks ke 18 = ^ atau 94 dalam ASCII xor 92 = 104
-Indeks ke 19 = J atau 74 dalam ASCII xor 92 = 124
-Indeks ke 20 = u atau 117 dalam ASCII xor 92 = 67
-Indeks ke 21 = = atau 61 dalam ASCII xor 92 = 11
-Indeks ke 22 = J atau 74 dalam ASCII xor 92 = 124
-Indeks ke 23 = ~ atau 126 dalam ASCII xor 92 = 72
-Indeks ke 24 = d atau 100 dalam ASCII xor 92 = 82
-Indeks ke 25 = s atau 115 dalam ASCII xor 92 = 69
-Indeks ke 26 = 3 atau 51 dalam ASCII xor 92 = 5
-Indeks ke 27 = = atau 61 dalam ASCII xor 92 = 11
-Indeks ke 28 = . atau 46 dalam ASCII xor 92 = 24
-Indeks ke 29 = $ atau 36 dalam ASCII xor 92 = 18
-Indeks ke 30 = @ atau 64 dalam ASCII xor 92 = 118
-Indeks ke 31 = e atau 101 dalam ASCII xor 92 = 83
-Indeks ke 32 = K atau 75 dalam ASCII xor 92 = 125
-Indeks ke 33 = k atau 107 dalam ASCII xor 92 = 93
-Indeks ke 34 = ; atau 59 dalam ASCII xor 92 = 13
-Indeks ke 35 = ~ atau 126 dalam ASCII xor 92 = 72
-Indeks ke 36 = G atau 71 dalam ASCII xor 92 = 113
-Indeks ke 37 = 2 atau 50 dalam ASCII xor 92 = 4
-Indeks ke 38 = d atau 100 dalam ASCII xor 92 = 82
-Indeks ke 39 = u atau 117 dalam ASCII xor 92 = 67
-Indeks ke 40 = 0 atau 48 dalam ASCII xor 92 = 6
-Indeks ke 41 = : atau 58 dalam ASCII xor 92 = 12
-Indeks ke 42 = l atau 108 dalam ASCII xor 92 = 90
-Indeks ke 43 = q atau 113 dalam ASCII xor 92 = 71
-Indeks ke 44 = & atau 38 dalam ASCII xor 92 = 16
-Indeks ke 45 = 8 atau 56 dalam ASCII xor 92 = 14
-Indeks ke 46 = 1 atau 49 dalam ASCII xor 92 = 7
-Indeks ke 47 = < atau 60 dalam ASCII xor 92 = 10
-Indeks ke 48 = - atau 45 dalam ASCII xor 92 = 27
-Indeks ke 49 = 6 atau 54 dalam ASCII xor 92 = 0
-Indeks ke 50 = 8 atau 56 dalam ASCII xor 92 = 14
-Indeks ke 51 = _ atau 95 dalam ASCII xor 92 = 105
-Indeks ke 52 = 0 atau 48 dalam ASCII xor 92 = 6
-Indeks ke 53 = l atau 108 dalam ASCII xor 92 = 90
-Indeks ke 54 = # atau 35 dalam ASCII xor 92 = 21
-Indeks ke 55 = 6 atau 54 dalam ASCII xor 92 = 0
-Indeks ke 56 = 9 atau 57 dalam ASCII xor 92 = 15
-Indeks ke 57 = 0 atau 48 dalam ASCII xor 92 = 6
-Indeks ke 58 = 7 atau 55 dalam ASCII xor 92 = 1
-Indeks ke 59 = C atau 67 dalam ASCII xor 92 = 117
-Indeks ke 60 = 3 atau 51 dalam ASCII xor 92 = 5
-Indeks ke 61 = V atau 86 dalam ASCII xor 92 = 96
-Indeks ke 62 = z atau 122 dalam ASCII xor 92 = 76
-Indeks ke 63 = . atau 46 dalam ASCII xor 92 = 24
+Indeks ke 0 = < atau 60 dalam ASCII xor 92 = 96
+Indeks ke 1 = > atau 62 dalam ASCII xor 92 = 98
+Indeks ke 2 = j atau 106 dalam ASCII xor 92 = 54
+Indeks ke 3 = } atau 125 dalam ASCII xor 92 = 33
+Indeks ke 4 = . atau 46 dalam ASCII xor 92 = 114
+Indeks ke 5 = 2 atau 50 dalam ASCII xor 92 = 110
+Indeks ke 6 = W atau 87 dalam ASCII xor 92 = 11
+Indeks ke 7 = , atau 44 dalam ASCII xor 92 = 112
+Indeks ke 8 = } atau 125 dalam ASCII xor 92 = 33
+Indeks ke 9 = l atau 108 dalam ASCII xor 92 = 48
+Indeks ke 10 = w atau 119 dalam ASCII xor 92 = 43
+Indeks ke 11 = 8 atau 56 dalam ASCII xor 92 = 100
+Indeks ke 12 = L atau 76 dalam ASCII xor 92 = 16
+Indeks ke 13 = q atau 113 dalam ASCII xor 92 = 45
+Indeks ke 14 = B atau 66 dalam ASCII xor 92 = 30
+Indeks ke 15 = : atau 58 dalam ASCII xor 92 = 102
+Indeks ke 16 = 7 atau 55 dalam ASCII xor 92 = 107
+Indeks ke 17 = V atau 86 dalam ASCII xor 92 = 10
+Indeks ke 18 = ^ atau 94 dalam ASCII xor 92 = 2
+Indeks ke 19 = J atau 74 dalam ASCII xor 92 = 22
+Indeks ke 20 = u atau 117 dalam ASCII xor 92 = 41
+Indeks ke 21 = = atau 61 dalam ASCII xor 92 = 97
+Indeks ke 22 = J atau 74 dalam ASCII xor 92 = 22
+Indeks ke 23 = ~ atau 126 dalam ASCII xor 92 = 34
+Indeks ke 24 = d atau 100 dalam ASCII xor 92 = 56
+Indeks ke 25 = s atau 115 dalam ASCII xor 92 = 47
+Indeks ke 26 = 3 atau 51 dalam ASCII xor 92 = 111
+Indeks ke 27 = = atau 61 dalam ASCII xor 92 = 97
+Indeks ke 28 = . atau 46 dalam ASCII xor 92 = 114
+Indeks ke 29 = $ atau 36 dalam ASCII xor 92 = 120
+Indeks ke 30 = @ atau 64 dalam ASCII xor 92 = 28
+Indeks ke 31 = e atau 101 dalam ASCII xor 92 = 57
+Indeks ke 32 = K atau 75 dalam ASCII xor 92 = 23
+Indeks ke 33 = k atau 107 dalam ASCII xor 92 = 55
+Indeks ke 34 = ; atau 59 dalam ASCII xor 92 = 103
+Indeks ke 35 = ~ atau 126 dalam ASCII xor 92 = 34
+Indeks ke 36 = G atau 71 dalam ASCII xor 92 = 27
+Indeks ke 37 = 2 atau 50 dalam ASCII xor 92 = 110
+Indeks ke 38 = d atau 100 dalam ASCII xor 92 = 56
+Indeks ke 39 = u atau 117 dalam ASCII xor 92 = 41
+Indeks ke 40 = 0 atau 48 dalam ASCII xor 92 = 108
+Indeks ke 41 = : atau 58 dalam ASCII xor 92 = 102
+Indeks ke 42 = l atau 108 dalam ASCII xor 92 = 48
+Indeks ke 43 = q atau 113 dalam ASCII xor 92 = 45
+Indeks ke 44 = & atau 38 dalam ASCII xor 92 = 122
+Indeks ke 45 = 8 atau 56 dalam ASCII xor 92 = 100
+Indeks ke 46 = 1 atau 49 dalam ASCII xor 92 = 109
+Indeks ke 47 = < atau 60 dalam ASCII xor 92 = 96
+Indeks ke 48 = - atau 45 dalam ASCII xor 92 = 113
+Indeks ke 49 = 6 atau 54 dalam ASCII xor 92 = 106
+Indeks ke 50 = 8 atau 56 dalam ASCII xor 92 = 100
+Indeks ke 51 = _ atau 95 dalam ASCII xor 92 = 3
+Indeks ke 52 = 0 atau 48 dalam ASCII xor 92 = 108
+Indeks ke 53 = l atau 108 dalam ASCII xor 92 = 48
+Indeks ke 54 = # atau 35 dalam ASCII xor 92 = 127
+Indeks ke 55 = 6 atau 54 dalam ASCII xor 92 = 106
+Indeks ke 56 = 9 atau 57 dalam ASCII xor 92 = 101
+Indeks ke 57 = 0 atau 48 dalam ASCII xor 92 = 108
+Indeks ke 58 = 7 atau 55 dalam ASCII xor 92 = 107
+Indeks ke 59 = C atau 67 dalam ASCII xor 92 = 31
+Indeks ke 60 = 3 atau 51 dalam ASCII xor 92 = 111
+Indeks ke 61 = V atau 86 dalam ASCII xor 92 = 10
+Indeks ke 62 = z atau 122 dalam ASCII xor 92 = 38
+Indeks ke 63 = . atau 46 dalam ASCII xor 92 = 114
 ```
 
 Hasil IPAD xor kunci kemudian digabung dengan pesan (dalam ASCII), menjadi:
@@ -233,6 +233,7 @@ b2d45029d89dd4c587a84a55899c209afd046ff7
 Langkah selanjutnya adalah penggabungan hasil hash pertama diatas dengan hasil dari xor antar OPAD dan kunci:
 
 ```
+b2d45029d89dd4c587a84a55899c209afd046ff7969854331141101111233484310016453010210710222419722345647111971141202857235510334271105641108102484512210010996113106100310848127106101108107311111038114
 ```
 
 ## RSA
