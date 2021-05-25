@@ -65,7 +65,9 @@ Ada tiga kemungkinan:
 
 Dalam pembuktian ini, kita menggunakan kunci yang ada pada nomor 1 dengan anggapan jika kunci memiliki panjang 64 byte.
 
-### Key xor IPAD
+### HMAC
+
+Langkah pertama adalah melakukan operasi xor antara kunci dan IPAD.
 
 Key =
 
@@ -151,6 +153,20 @@ Ketika digabungkan menjadi suatu array:
 ```
 10 8 92 75 24 4 97 26 75 90 65 14 122 71 116 12 1 96 104 124 67 11 124 72 82 69 5 11 24 18 118 83 125 93 13 72 113 4 82 67 6 12 90 71 16 14 7 10 27 0 14 105 6 90 21 0 15 6 1 117 5 96 76 24
 ```
+
+Hasil ini kemudian digabung dengan pesan (dalam ASCII), menjadi:
+
+```
+1089275244972675906514122711161219610412467111247282695112418118831259313721134826761290711614710270141056902101561117596762465666769686566656869656565666967656968696565656666666968676665676669656868686865696667666766656982666567826766686569686569656766696768656968696566676666666768656965676668676768666569656667696567696967
+```
+
+Kemudian dilakukan perhitungan hash terhadap penggabungan ini, menghasilkan:
+
+```
+b2d45029d89dd4c587a84a55899c209afd046ff7
+```
+
+Kemudian dilakukan 
 
 ## RSA
 
