@@ -1,4 +1,4 @@
-Pembuktian.
+# Pembuktian Enkripsi dan HMAC-SHA1
 
 Link = https://github.com/deovaliandro/pembuktian/blob/main/pembuktian.md
 
@@ -451,3 +451,107 @@ arr[98] = 69 = 568
 arr[99] = 67 = 335
 ```
 
+Hasil tiap indeks kemudian diubah menjadi hex dan ditambahkan padding `0` didepannya sehingga panjangnya fix menjadi 4 byte.
+
+```
+1375 = 55f , ditambah padding = 055f
+870 = 366 , ditambah padding = 0366
+335 = 14f , ditambah padding = 014f
+568 = 238 , ditambah padding = 0238
+336 = 150 , ditambah padding = 0150
+1375 = 55f , ditambah padding = 055f
+870 = 366 , ditambah padding = 0366
+1375 = 55f , ditambah padding = 055f
+336 = 150 , ditambah padding = 0150
+568 = 238 , ditambah padding = 0238
+1375 = 55f , ditambah padding = 055f
+1375 = 55f , ditambah padding = 055f
+1375 = 55f , ditambah padding = 055f
+870 = 366 , ditambah padding = 0366
+568 = 238 , ditambah padding = 0238
+335 = 14f , ditambah padding = 014f
+1375 = 55f , ditambah padding = 055f
+568 = 238 , ditambah padding = 0238
+336 = 150 , ditambah padding = 0150
+568 = 238 , ditambah padding = 0238
+1375 = 55f , ditambah padding = 055f
+1375 = 55f , ditambah padding = 055f
+1375 = 55f , ditambah padding = 055f
+870 = 366 , ditambah padding = 0366
+870 = 366 , ditambah padding = 0366
+870 = 366 , ditambah padding = 0366
+568 = 238 , ditambah padding = 0238
+336 = 150 , ditambah padding = 0150
+335 = 14f , ditambah padding = 014f
+870 = 366 , ditambah padding = 0366
+1375 = 55f , ditambah padding = 055f
+335 = 14f , ditambah padding = 014f
+870 = 366 , ditambah padding = 0366
+568 = 238 , ditambah padding = 0238
+1375 = 55f , ditambah padding = 055f
+336 = 150 , ditambah padding = 0150
+336 = 150 , ditambah padding = 0150
+336 = 150 , ditambah padding = 0150
+336 = 150 , ditambah padding = 0150
+1375 = 55f , ditambah padding = 055f
+568 = 238 , ditambah padding = 0238
+870 = 366 , ditambah padding = 0366
+335 = 14f , ditambah padding = 014f
+870 = 366 , ditambah padding = 0366
+335 = 14f , ditambah padding = 014f
+870 = 366 , ditambah padding = 0366
+1375 = 55f , ditambah padding = 055f
+568 = 238 , ditambah padding = 0238
+1538 = 602 , ditambah padding = 0602
+870 = 366 , ditambah padding = 0366
+1375 = 55f , ditambah padding = 055f
+335 = 14f , ditambah padding = 014f
+1538 = 602 , ditambah padding = 0602
+335 = 14f , ditambah padding = 014f
+870 = 366 , ditambah padding = 0366
+336 = 150 , ditambah padding = 0150
+1375 = 55f , ditambah padding = 055f
+568 = 238 , ditambah padding = 0238
+336 = 150 , ditambah padding = 0150
+1375 = 55f , ditambah padding = 055f
+568 = 238 , ditambah padding = 0238
+1375 = 55f , ditambah padding = 055f
+335 = 14f , ditambah padding = 014f
+870 = 366 , ditambah padding = 0366
+568 = 238 , ditambah padding = 0238
+335 = 14f , ditambah padding = 014f
+336 = 150 , ditambah padding = 0150
+1375 = 55f , ditambah padding = 055f
+568 = 238 , ditambah padding = 0238
+336 = 150 , ditambah padding = 0150
+568 = 238 , ditambah padding = 0238
+1375 = 55f , ditambah padding = 055f
+870 = 366 , ditambah padding = 0366
+335 = 14f , ditambah padding = 014f
+870 = 366 , ditambah padding = 0366
+870 = 366 , ditambah padding = 0366
+870 = 366 , ditambah padding = 0366
+335 = 14f , ditambah padding = 014f
+336 = 150 , ditambah padding = 0150
+1375 = 55f , ditambah padding = 055f
+568 = 238 , ditambah padding = 0238
+1375 = 55f , ditambah padding = 055f
+335 = 14f , ditambah padding = 014f
+870 = 366 , ditambah padding = 0366
+336 = 150 , ditambah padding = 0150
+335 = 14f , ditambah padding = 014f
+335 = 14f , ditambah padding = 014f
+336 = 150 , ditambah padding = 0150
+870 = 366 , ditambah padding = 0366
+1375 = 55f , ditambah padding = 055f
+568 = 238 , ditambah padding = 0238
+1375 = 55f , ditambah padding = 055f
+870 = 366 , ditambah padding = 0366
+335 = 14f , ditambah padding = 014f
+568 = 238 , ditambah padding = 0238
+1375 = 55f , ditambah padding = 055f
+335 = 14f , ditambah padding = 014f
+568 = 238 , ditambah padding = 0238
+568 = 238 , ditambah padding = 0238
+335 = 14f , ditambah padding = 014f
+```
